@@ -19,7 +19,7 @@ public class HelloCtrl {
 
     //这是一个什么样的分支
     @Execute(name = "/hello2")
-    public Object hello() {
+    public Object hello2() {
         return "hello " + request.get("name");
     }
 
