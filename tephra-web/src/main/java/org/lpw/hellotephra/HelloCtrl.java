@@ -18,12 +18,15 @@ public class HelloCtrl {
     private Request request;
 
     //这是一个什么样的分支
-    @Execute(name = "/hello2")
-    public Object hello2() {
-        return "hello " + request.get("name");
+    @Execute(name = "/login", type = "freemarker", template = "login")
+    public Object login() {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("name", request.get("name"));
+
+        return map;
     }
 
-    @Execute(name = "/hello1")
+    @Execute(name = "/hello")
     public Object hello() {
         return "hello " + request.get("name");
     }
